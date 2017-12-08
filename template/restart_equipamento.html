@@ -115,29 +115,21 @@
 				
 					<!-- Inicio Conteudo -->				
 					
-					<div class='col-lg-3'>
-						<div class='panel panel-green'>
-							<div class='panel-heading'><i class='fa fa-bolt'></i> (Ligado) Lâmpada - Cod.: D"+String(i)+"</div>
-							<div class='panel-body'>
-								<form action='iluminacao.html' method='POST'>
-									<button type='submit' name='button_"+String(i)+"' value='0' class='btn btn-danger btn-lg' ><i class='fa fa-power-off'></i> <br/>Desligar</button>
-								</form>								
-							</div>
-							<div class='panel-footer'>"+nomesDispositivos[i]+"</div>
-						</div>						
-					</div>
-					<div class='col-lg-3'>
-						<div class='panel panel-red'>
-							<div class='panel-heading'><i class='fa fa-power-off'></i> (Desligado) Lâmpada - Cod.: D"+String(i)+"</div>
-							<div class='panel-body'>
-								<form action='iluminacao.html' method='POST'>
-									<button type='submit' name='button_"+String(i)+"' value='1' class='btn btn-success btn-lg'><i class='fa fa-bolt'></i><br/>Ligar</button>	
-								</form>											
-							</div>
-							<div class='panel-footer'>"+nomesDispositivos[i]+"</div>
-						</div>						
-					</div>
-								
+<div class='col-lg-12'>
+	<div class='panel panel-default'>
+		<div class='panel-heading'>
+			Reboot - Equipamento
+		</div>
+		<div class='panel-body'>
+			<p>Clique no botão abaixo para realizar o reboot da sua Apoena - Cetral Slave</p>
+			<form action='restart_equipamento.html' method='POST'>
+				<button type='submit' onclick='confirm();' class='btn btn-default'>Reboot</button>	
+			</form>	
+		</div>
+		<div class='panel-footer'></div>
+	</div>
+</div>
+
 										
 										
 										<!-- Fim Conteudo -->														
@@ -150,57 +142,3 @@
 	<script src='https://cdn.rawgit.com/lucasapoena/apoenaIOT-slave/master/template/js/js.js'></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
