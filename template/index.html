@@ -7,8 +7,8 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='description' content='ApoenaIOT'>
     <meta name='author' content='Lucas Apoena'>
-	<link href='https://cdn.rawgit.com/lucasapoena/apoenaIOT-slave/master/template/css/css.css' rel='stylesheet'> 
-    <title>ApoenaIOT - Central Slave</title>
+	<link href='https://rawgit.com/lucasapoena/apoenaIOT-slave/master/template/css/css.css' rel='stylesheet'> 
+    <title>ApoenaIOT - Central Slave "+ versaoApp +"</title>
 </head>
 
 <body>
@@ -24,9 +24,15 @@
                 <a class='navbar-brand' href='index.html'>ApoenaIOT - Central Slave</a>
             </div>
             <ul class='nav navbar-top-links navbar-right'>
+				<li>
+                    <a href='#' accesskey="1"><i title='Ajustar Fonte' aria-hidden='true' class='fa  fa-font fa-fw'></i></a>
+				</li>	
+				<li>
+                    <a href='#' accesskey="2"><i title='Ajustar Contraste' aria-hidden='true' class='fa  fa-low-vision fa-fw'></i></a>
+				</li>	
                 <li class='dropdown'>
-                    <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
-                        <i class='fa fa-tasks fa-fw'></i> <i class='fa fa-caret-down'></i>
+                    <a aria-label= "Informações gerais de desempenho da placa" class='dropdown-toggle' data-toggle='dropdown' href='#'>
+                        <i title='Informações de desempenho' aria-hidden='true' class='fa fa-tasks fa-fw'></i> <i aria-hidden='true' aria-hidden='true' class='fa fa-caret-down'></i>
                     </a>
                     <ul class='dropdown-menu dropdown-messages'>
                         <li>
@@ -34,11 +40,11 @@
                                 <div>
                                     <p>
                                         <strong>CPU</strong>
-                                        <span class='pull-right text-muted'>40% Usado</span>
+                                        <span class='pull-right text-muted'>40% Utilizado</span>
                                     </p>
                                     <div class='progress progress-striped active'>
-                                        <div class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='40' aria-valuemin='0' aria-valuemax='100' style='width: 40%'>
-                                            <span class='sr-only'>40% Complete (success)</span>
+                                        <div title='Utilizando 40% da CPU' class='progress-bar progress-bar-success' role='progressbar' aria-valuenow='40' aria-valuemin='0' aria-valuemax='100' style='width: 40%'>
+                                            <span class='sr-only'></span>
                                         </div>
                                     </div>
                                 </div>
@@ -49,12 +55,12 @@
                             <a href='#'>
                                 <div>
                                     <p>
-                                        <strong>Memória</strong>
-                                        <span class='pull-right text-muted'>80% Usada</span>
+                                        <strong>Memoria</strong>
+                                        <span class='pull-right text-muted'>80% Utilizado</span>
                                     </p>
                                     <div class='progress progress-striped active'>
-                                        <div class='progress-bar progress-bar-danger' role='progressbar' aria-valuenow='80' aria-valuemin='0' aria-valuemax='100' style='width: 80%'>
-                                            <span class='sr-only'>80% Complete (danger)</span>
+                                        <div title='Utilizando 80% da Memória' class='progress-bar progress-bar-danger' role='progressbar' aria-valuenow='80' aria-valuemin='0' aria-valuemax='100' style='width: 80%'>
+                                            <span class='sr-only'></span>
                                         </div>
                                     </div>
                                 </div>
@@ -66,11 +72,11 @@
                                 <div>
                                     <p>
                                         <strong>Armazenamento</strong>
-                                        <span class='pull-right text-muted'>20% Usada</span>
+                                        <span class='pull-right text-muted'>20% Utilizado</span>
                                     </p>
                                     <div class='progress progress-striped active'>
-                                        <div class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='width: 20%'>
-                                            <span class='sr-only'>20% Complete</span>
+                                        <div title='Utilizando 20% do Armazenamento' class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='100' style='width: 20%'>
+                                            <span class='sr-only'></span>
                                         </div>
                                     </div>
                                 </div>
@@ -83,24 +89,24 @@
                 <div class='sidebar-nav navbar-collapse'>
                     <ul class='nav' id='side-menu'>                       
                         <li>
-                            <a href='index.html'><i class='fa fa-dashboard fa-fw'></i> Dashboard</a>
+                            <a href='index.html' accesskey="3"><i aria-hidden='true' class='fa fa-dashboard fa-fw'></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href='#'><i class='fa fa-sitemap fa-fw'></i> Dispositivos<span class='fa arrow'></span></a>
+                            <a href='#'><i aria-hidden='true' class='fa fa-sitemap fa-fw'></i> Dispositivos<span class='fa arrow'></span></a>
                             <ul class='nav nav-second-level'>
                                 <li>
-                                    <a href='iluminacao.html'><i class='fa fa-lightbulb-o' aria-hidden='true'></i> Iluminação</a>
+                                    <a href='iluminacao.html' accesskey="4"><i aria-hidden='true' class='fa fa-lightbulb-o' aria-hidden='true'></i> Iluminacao</a>
                                 </li>
                                 <li>
-                                    <a href='sensores.html'><i class='fa fa-bar-chart-o fa-fw'></i> Sensores</a>
+                                    <a href='sensores.html' accesskey="5"><i aria-hidden='true' class='fa fa-bar-chart-o fa-fw'></i> Sensores</a>
                                 </li>
                             </ul>
                         </li>
 						<li>
-                            <a href='#'><i class='fa fa-wrench fa-fw'></i> Configurações<span class='fa arrow'></span></a>
+                            <a href='#'><i aria-hidden='true' class='fa fa-wrench fa-fw'></i> Configuracoes<span class='fa arrow'></span></a>
                             <ul class='nav nav-second-level'>
-                                <li><a href='restauracao_configuracao.html'>Restaurar Configurações</a></li>
-                                <li><a href='restart_equipamento.html'>Reboot</a></li>
+                                <li><a href='restauracao_configuracao.html'  accesskey="6">Restaurar Configuracoeses</a></li>
+                                <li><a href='restart_equipamento.html' accesskey="7">Reboot</a></li>
                             </ul>
                         </li>
                     </ul>

@@ -1,3 +1,14 @@
+/*
+ * 
+ * ApoenaIOT-slave v0.0.1
+ *
+ * Controle e automação de dispositivos.  
+ * @Autor: Lucas Apoena  
+ * @E-mail: lucasapena@gmail.com  
+ * https://github.com/lucasapoena/apoenaIOT-slave
+ * 
+ */
+
 #include <ESP8266WiFi.h>  //https://github.com/esp8266/Arduino
 #include <DNSServer.h>  //Servidor DNS local usado para redirecionar todas as solicitações para o portal de configuração
 #include <ESP8266WebServer.h> //Biblioteca do WebServer
@@ -10,6 +21,7 @@ DNSServer         dnsServer;
 /* Utilizado o PROGMEM para habilitar o armazenarnamento das constantes na Flash e economizar espaço na RAM */
 #define PROGMEM ICACHE_RODATA_ATTR
 #define QTD_RELES 3
+#define versaoApp "v0.0.1"
 
 // Dados de acesso a central de controle slave
 char * AP_SSID_NAME = "ApoenaIOT_";
@@ -19,9 +31,11 @@ const char * AP_PASSWORD  = "password";
 **  D0 = 16; D1 = 5; D2 = 4; D3 = 0; D4 = 2; D5 = 14; D6 = 12; D7 = 13; D8 = 15; D9 = 3; D10 = 1;
 */
 const uint8_t GPIOPIN_CARGAS[QTD_RELES] = {D1,D2,D3}; // Pinos mapeados para acionamento de cargas
+byte statusGpioCargas[QTD_RELES]; 
+
 float valorTemperatura = 0 ;
 float valorUmidade = 0 ;
-byte statusGpioCargas[QTD_RELES] = {0,0,1};
+
 
 void setup(void) {
   Serial.begin(115200); // Inicializa o monitor serial
@@ -29,6 +43,7 @@ void setup(void) {
   // Configuração dos pinos de acionamento de cargas elétricas
   for ( int x = 0 ; x < QTD_RELES ; x++ ) { 
     pinMode(GPIOPIN_CARGAS[x],OUTPUT);
+    statusGpioCargas[x] = 0;
   }
   
   configuraAP();
@@ -80,7 +95,7 @@ void configuraAP(){
 }
 
 void resetDevice(){
-    Serial.println(F("Realizando o reboot do equipamento..."));
+    Serial.println(F("Realizando o hard reset do equipamento..."));
     delay(3000); 
     ESP.reset();
     delay(5000); 
@@ -91,24 +106,6 @@ void restartDevice(){
     ESP.restart();
     delay(5000); 
 }
-void getResetConfig(){
-  char html[400]; 
-  snprintf (html, 400,
-    "<html>\
-      <head>\
-        <title>Reset - Config</title>\
-      </head>\
-      <body>\
-        <h1>Restaurando configigurações de Fábrica</h1>\
-        <form method='POST'>\
-          <p><input type='submit' value='Reset' /></p>\
-        </form>\
-      </body>\
-    </html>"
-  );  
-  webServer.send ( 200, "text/html", html);  
-}
-
 void getRestaurarConfiguracao(){
   Serial.println("Restaurando configurações de fábrica...");
   wifiManager.resetSettings();
